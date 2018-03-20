@@ -1,0 +1,4 @@
+#!/bin/sh
+DATESTRING=${1:-yesterday}
+DATE=`date +%Y-%m-%d -d "${DATESTRING}"`
+/opt/scripts/weewx-custom-archive-daily.sh $DATE > /var/www/weather/Archive/CUSTOM-ARC-${DATE}.csv && /opt/scripts/convert-custom-arc-to-SI.py /var/www/weather/Archive/CUSTOM-ARC-${DATE}.csv
