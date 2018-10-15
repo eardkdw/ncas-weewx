@@ -33,7 +33,7 @@
       //datepicker functionality for archive files
       //only works when file is copied to sci.ncas.ac.uk
       var datelist ={}; //initialise empty associative array
-      var dir = '/leedsweather/Archive/';
+      var dir = '/sandwith/Archive/';
 
       //get list of valid dates
       \$.ajax({
@@ -88,7 +88,7 @@
       <div id="masthead">
         <h1>$station.location</h1>
         <h2>Current Weather Conditions</h2>
-          <h2>$current.dateTime</h2>
+          <h2>$current.dateTime.format("%Y-%m-%d %H:%M:%S %Z")</h2>
       </div>
 
       <div id="stats_group">
@@ -364,7 +364,7 @@
               <td class="data">$station.altitude</td>
             </tr>
           </table>
-	  <p>This weather station is located on the roof of the <a href="http://www.leeds.ac.uk/">University of Leeds</a> <a href="http://see.leeds.ac.uk/home/">School of Earth and Environment</a>.</p>
+	  <p>This weather station is located in Sandwith, Cumbria, as part of the RAIN-E Project</p>
           <p>
             This station uses a $station.hardware, controlled by
             <a href="http://www.weewx.com">'weewx'</a>, an experimental
@@ -537,6 +537,7 @@
           <a href="daywinddir.png"><img src="daywinddir.png"   alt="Hi Wind" /></a>
           <a href="dayinside.png"><img src="dayinside.png"    alt="Inside" /></a>
           <a href="daywindvec.png"><img src="daywindvec.png"   alt="Wind Vector" /></a>
+          <a href="daywindrose.png"><img src="daywindrose.png"   alt="Wind Rose" /></a>
           #if $day.UV.has_data
           <a href="dayuv.png"><img src="dayuv.png" alt="UV Index" /></a>
           #end if
